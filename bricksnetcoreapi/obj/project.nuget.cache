@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "roeAR/vKkXs/aVbkHv4pJwXCisONZl44oi77Jhi2eNdrwLv2GJdOVfDq3KjoJGDnY3cqZugClX5LcxnjqxSWXw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\91808\\Source\\Repos\\BricksBuzz\\bricksnetcoreapi\\bricksnetcoreapi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\91808\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\91808\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\91808\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\91808\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\91808\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\91808\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

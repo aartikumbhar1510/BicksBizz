@@ -11,6 +11,7 @@ builder.Services.AddSwaggerGen();
 
 // adding repo to interface
 builder.Services.AddScoped<ICustomerOrderRepository,CustomerOrderRepository>();
+builder.Services.AddScoped<IProductionRepository,ProductionRepository>();
 
 
 

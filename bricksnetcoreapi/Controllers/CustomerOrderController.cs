@@ -2,6 +2,7 @@
 using bricksnetcoreapi.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.CompilerServices;
 
 namespace bricksnetcoreapi.Controllers
 {
@@ -10,12 +11,12 @@ namespace bricksnetcoreapi.Controllers
     public class CustomerOrderController : ControllerBase
     {
         public readonly ICustomerOrderRepository _orderRepository;
-        public readonly IConfiguration _configuration;
 
-        public CustomerOrderController(ICustomerOrderRepository orderRepository, IConfiguration configuration)
+
+        public CustomerOrderController(ICustomerOrderRepository orderRepository)
         {
             _orderRepository = orderRepository;
-            _configuration = configuration;
+    
         }
 
         [HttpGet]
@@ -23,6 +24,14 @@ namespace bricksnetcoreapi.Controllers
         public Task<IActionResult> GetOrderByOrderId(string orderId)
         {
             dynamic result = _orderRepository.GetOrderByOrderId(orderId);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("getallcustomer")]
+        public Task<IActionResult> GetAllCustomer()
+        {
+            dynamic result = _orderRepository.GetAllCustomer();
             return Ok(result);
         }
     }

@@ -9,5 +9,6 @@ namespace bricksnetcoreapi.Repository
         Task<bool> DeleteOrder(CustomerOrder order);
         Task<CustomerOrder> GetOrderByOrderId(string id);
         Task<List<CustomerOrder>> GetOrdersList();
+        List<Customer> GetAllCustomer();
     }
 }

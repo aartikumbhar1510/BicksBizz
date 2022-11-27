@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bricksnetcoreapi",
+    "\\bricksnetcoreapi\\Model",
+    "\\bricksnetcoreapi\\Repository"
   ],
-  "SelectedNode": "\\bricksnetcoreapi.sln",
+  "SelectedNode": "\\bricksnetcoreapi\\Model\\CustomerOrder.cs",
   "PreviewInSolutionExplorer": false
 }

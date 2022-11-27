@@ -29,10 +29,12 @@ namespace bricksnetcoreapi.Controllers
 
         [HttpGet]
         [Route("getallcustomer")]
-        public Task<IActionResult> GetAllCustomer()
+        public List<Customer> GetAllCustomer()
         {
-            dynamic result = _orderRepository.GetAllCustomer();
-            return Ok(result);
+            List<Customer> customers = new List<Customer>();
+            customers = _orderRepository.GetAllCustomer();
+            return customers;
+            
         }
     }
 }

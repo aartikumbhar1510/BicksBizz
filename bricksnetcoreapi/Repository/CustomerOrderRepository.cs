@@ -11,10 +11,10 @@ namespace bricksnetcoreapi.Repository
     {
         private readonly IConfiguration _configuration;
         private readonly string _connectionString = string.Empty;
-        public CustomerOrderRepository(IConfiguration configuration,string connectionString) 
+        public CustomerOrderRepository(IConfiguration configuration) 
         {
             _configuration = configuration;
-            _connectionString = _connectionString!=null? _configuration.GetConnectionString("BricksdbConn").ToString():connectionString.ToString();
+            _connectionString = _configuration.GetConnectionString("BricksdbConn").ToString();
         }
 
         public Task<bool> DeleteOrder(CustomerOrder order)
@@ -30,25 +30,28 @@ namespace bricksnetcoreapi.Repository
             {
                 SqlCommand cmd = new SqlCommand(Constant.GET_ALL_CUSTOMER, con);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 con.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable ds = new DataTable();
+                sda.Fill(ds);
+                for (int i = 0; i < ds.Rows.Count; i++)
                 {
+
+
                     Customer customer = new Customer();
 
-                    customer.CustomerId = Convert.ToInt32(rdr["id"]);
-                    customer.CustomerName = rdr["name"].ToString();
-                    customer.CustomerContact = rdr["contact"].ToString();
-                    customer.CustomerAddress = rdr["address"].ToString();
-                    customer.CustomerStatus = rdr["status"].ToString();
+                    customer.CustomerId = Convert.ToInt32(ds.Rows[i]["customer_id"]);
+                    customer.CustomerName = ds.Rows[i]["customer_name"].ToString();
+                    customer.CustomerContact = ds.Rows[i]["customer_contact"].ToString();
+                    customer.CustomerAddress = ds.Rows[i]["customer_address"].ToString();
+                    customer.CustomerStatus = ds.Rows[i]["customer_status"].ToString();
 
                     customers.Add(customer);
-                }
+               
+            }
                 con.Close();
             }
-            return customers;
+            return customers.ToList();
         }
 
         public Task<CustomerOrder> GetOrderByOrderId(string id)

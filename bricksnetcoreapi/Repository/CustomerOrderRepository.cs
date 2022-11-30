@@ -1,4 +1,4 @@
-﻿using bricksnetcoreapi.Model;
+using bricksnetcoreapi.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlClient;
 using System.Data;
@@ -11,7 +11,7 @@ namespace bricksnetcoreapi.Repository
     {
         private readonly IConfiguration _configuration;
         private readonly string _connectionString = string.Empty;
-        public CustomerOrderRepository(IConfiguration configuration) 
+        public CustomerOrderRepository(IConfiguration configuration)
         {
             _configuration = configuration;
             _connectionString = _configuration.GetConnectionString("BricksdbConn").ToString();
@@ -25,7 +25,6 @@ namespace bricksnetcoreapi.Repository
         public List<Customer> GetAllCustomer()
         {
             List<Customer> customers = new List<Customer>();
-
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 SqlCommand cmd = new SqlCommand(Constant.GET_ALL_CUSTOMER, con);
@@ -36,21 +35,18 @@ namespace bricksnetcoreapi.Repository
                 sda.Fill(ds);
                 for (int i = 0; i < ds.Rows.Count; i++)
                 {
-
-
                     Customer customer = new Customer();
-
                     customer.CustomerId = Convert.ToInt32(ds.Rows[i]["customer_id"]);
                     customer.CustomerName = ds.Rows[i]["customer_name"].ToString();
                     customer.CustomerContact = ds.Rows[i]["customer_contact"].ToString();
                     customer.CustomerAddress = ds.Rows[i]["customer_address"].ToString();
                     customer.CustomerStatus = ds.Rows[i]["customer_status"].ToString();
-
                     customers.Add(customer);
-               
-            }
+                }
+
                 con.Close();
             }
+
             return customers.ToList();
         }
 
@@ -67,9 +63,9 @@ namespace bricksnetcoreapi.Repository
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="order"></param>
+        /// <param name = "order"></param>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
+        /// <exception cref = "NotImplementedException"></exception>
         public Task<bool> PlaceOrder(CustomerOrder order)
         {
             throw new NotImplementedException();

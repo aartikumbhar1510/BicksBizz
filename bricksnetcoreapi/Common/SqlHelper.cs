@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+using System.Data.SqlClient;
 
 namespace bricksnetcoreapi.Common
 {
@@ -7,7 +7,7 @@ namespace bricksnetcoreapi.Common
         private readonly IConfiguration configuration;
         public SqlHelper(IConfiguration _configuration)
         {
-            configuration = _configuration; 
+            configuration = _configuration;
         }
 
         public string GetConnectionString()

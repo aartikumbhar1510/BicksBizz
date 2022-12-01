@@ -8,12 +8,12 @@ namespace bricksnetcoreapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerOrderController : ControllerBase
+    public class OrderController : ControllerBase
     {
-        public readonly ICustomerOrderRepository _orderRepository;
+        public readonly IOrderRepository _orderRepository;
 
 
-        public CustomerOrderController(ICustomerOrderRepository orderRepository)
+        public OrderController(IOrderRepository orderRepository)
         {
             _orderRepository = orderRepository;
     

@@ -2,7 +2,7 @@
 
 namespace bricksnetcoreapi.Repository
 {
-    public interface ICustomerOrderRepository
+    public interface IOrderRepository
     {
         Task<bool> PlaceOrder(CustomerOrder order);
         Task<bool> UpdateOrder(CustomerOrder order);

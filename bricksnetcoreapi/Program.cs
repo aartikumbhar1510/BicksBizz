@@ -10,8 +10,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // adding repo to interface
-builder.Services.AddScoped<ICustomerOrderRepository,CustomerOrderRepository>();
+builder.Services.AddScoped<IOrderRepository,OrderRepository>();
 builder.Services.AddScoped<IProductionRepository,ProductionRepository>();
+builder.Services.AddScoped<IWorkerRepository,WorkerRepository>();
+builder.Services.AddScoped<ISalesRepository, SalesRepository>();
+builder.Services.AddScoped<IMaterialRepository, MaterialRepository>();
 
 
 

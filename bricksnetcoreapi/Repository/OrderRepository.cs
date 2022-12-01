@@ -7,11 +7,11 @@ using bricksnetcoreapi.Common;
 
 namespace bricksnetcoreapi.Repository
 {
-    public class CustomerOrderRepository : ICustomerOrderRepository
+    public class OrderRepository : IOrderRepository
     {
         private readonly IConfiguration _configuration;
         private readonly string _connectionString = string.Empty;
-        public CustomerOrderRepository(IConfiguration configuration)
+        public OrderRepository(IConfiguration configuration)
         {
             _configuration = configuration;
             _connectionString = _configuration.GetConnectionString("BricksdbConn").ToString();

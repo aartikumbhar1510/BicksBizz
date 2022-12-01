@@ -1,6 +1,6 @@
 ﻿namespace bricksnetcoreapi.Model
 {
-    public class Customer
+    public class CustomerModel
     {
         public int CustomerId { get; set; }
         public string? CustomerName { get; set; }

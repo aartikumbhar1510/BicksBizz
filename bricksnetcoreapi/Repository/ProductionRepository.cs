@@ -1,10 +1,10 @@
-﻿using bricksnetcoreapi.Model;
+﻿using bricksnetcoreapi.Models;
 
 namespace bricksnetcoreapi.Repository
 {
     public class ProductionRepository : IProductionRepository
     {
-        public Task<ProductionDetail> GetProductionDetailByCode(string code)
+        public Task<ProductionModel> GetProductionDetailByCode(string code)
         {
             throw new NotImplementedException();
         }

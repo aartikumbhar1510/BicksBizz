@@ -1,0 +1,91 @@
+==========
+References
+==========
+bricksnetcoreapi.Common
+Microsoft.Extensions.Configuration
+System
+bricksnetcoreapi.Controllers
+Microsoft.AspNetCore.Mvc
+bricksnetcoreapi.Repository
+bricksnetcoreapi.Model
+bricksnetcoreapi
+System.Linq
+System.Data.SqlClient
+System.Data
+System.Data.Common
+System.Collections.Generic
+Microsoft.AspNetCore.Http
+System.Runtime.CompilerServices
+Microsoft.EntityFrameworkCore
+global::Microsoft.AspNetCore.Builder
+global::Microsoft.AspNetCore.Hosting
+global::Microsoft.AspNetCore.Http
+global::Microsoft.AspNetCore.Routing
+global::Microsoft.Extensions.Configuration
+global::Microsoft.Extensions.DependencyInjection
+global::Microsoft.Extensions.Hosting
+global::Microsoft.Extensions.Logging
+global::System
+global::System.Collections.Generic
+global::System.IO
+global::System.Linq
+global::System.Net.Http
+global::System.Net.Http.Json
+global::System.Threading
+global::System.Threading.Tasks
+System.Reflection
+project.all
+
+===============
+DownloadedFiles
+===============
+project.all.json
+system.data.sqlclient.json
+
+==============
+ProjectResults
+==============
+----------------------
+Showing results for: C:\Users\91808\Source\Repos\BricksBuzz\bricksnetcoreapi\bricksnetcoreapi.csproj
+----------------------
+---------------------------
+Target Versions:
+---------------------------
+net6.0
+---------------------------
+Source Versions:
+---------------------------
+net48
+---------------------------
+Upgrade packages:
+---------------------------
+---------------------------
+Action packages:
+---------------------------
+Microsoft.Data.SqlClient,*
+
+----------------------
+Showing results for: C:\Users\91808\Source\Repos\BricksBuzz\bricksnetcoreapi\bricksnetcoreapi.csproj
+----------------------
+---------------------------
+Target Versions:
+---------------------------
+net6.0
+---------------------------
+Source Versions:
+---------------------------
+net48
+---------------------------
+Upgrade packages:
+---------------------------
+---------------------------
+Action packages:
+---------------------------
+Microsoft.Data.SqlClient,*
+
+
+===========
+BuildErrors
+===========
+
+

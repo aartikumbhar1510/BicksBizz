@@ -1,6 +1,6 @@
 ﻿namespace bricksnetcoreapi.Model
 {
-    public class WorkerRepository
+    public class MaterialModel
     {
     }
 }

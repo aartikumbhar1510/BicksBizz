@@ -1,9 +1,9 @@
-﻿using bricksnetcoreapi.Model;
+﻿using bricksnetcoreapi.Models;
 
 namespace bricksnetcoreapi.Repository
 {
     public interface IProductionRepository
     {
-        Task<ProductionDetail> GetProductionDetailByCode(string code);
+        Task<ProductionModel> GetProductionDetailByCode(string code);
     }
 }

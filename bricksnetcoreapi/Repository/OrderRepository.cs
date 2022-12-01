@@ -17,14 +17,14 @@ namespace bricksnetcoreapi.Repository
             _connectionString = _configuration.GetConnectionString("BricksdbConn").ToString();
         }
 
-        public Task<bool> DeleteOrder(CustomerOrder order)
+        public Task<bool> DeleteOrder(OrderModel order)
         {
             throw new NotImplementedException();
         }
 
-        public List<Customer> GetAllCustomer()
+        public List<CustomerModel> GetAllCustomer()
         {
-            List<Customer> customers = new List<Customer>();
+            List<CustomerModel> customers = new List<CustomerModel>();
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 SqlCommand cmd = new SqlCommand(Constant.GET_ALL_CUSTOMER, con);
@@ -35,7 +35,7 @@ namespace bricksnetcoreapi.Repository
                 sda.Fill(ds);
                 for (int i = 0; i < ds.Rows.Count; i++)
                 {
-                    Customer customer = new Customer();
+                    CustomerModel customer = new CustomerModel();
                     customer.CustomerId = Convert.ToInt32(ds.Rows[i]["customer_id"]);
                     customer.CustomerName = ds.Rows[i]["customer_name"].ToString();
                     customer.CustomerContact = ds.Rows[i]["customer_contact"].ToString();
@@ -50,12 +50,12 @@ namespace bricksnetcoreapi.Repository
             return customers.ToList();
         }
 
-        public Task<CustomerOrder> GetOrderByOrderId(string id)
+        public Task<OrderModel> GetOrderByOrderId(string id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<CustomerOrder>> GetOrdersList()
+        public Task<List<OrderModel>> GetOrdersList()
         {
             throw new NotImplementedException();
         }
@@ -66,12 +66,12 @@ namespace bricksnetcoreapi.Repository
         /// <param name = "order"></param>
         /// <returns></returns>
         /// <exception cref = "NotImplementedException"></exception>
-        public Task<bool> PlaceOrder(CustomerOrder order)
+        public Task<bool> PlaceOrder(OrderModel order)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdateOrder(CustomerOrder order)
+        public Task<bool> UpdateOrder(OrderModel order)
         {
             throw new NotImplementedException();
         }

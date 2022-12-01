@@ -4,11 +4,11 @@ namespace bricksnetcoreapi.Repository
 {
     public interface IOrderRepository
     {
-        Task<bool> PlaceOrder(CustomerOrder order);
-        Task<bool> UpdateOrder(CustomerOrder order);
-        Task<bool> DeleteOrder(CustomerOrder order);
-        Task<CustomerOrder> GetOrderByOrderId(string id);
-        Task<List<CustomerOrder>> GetOrdersList();
-        List<Customer> GetAllCustomer();
+        Task<bool> PlaceOrder(OrderModel order);
+        Task<bool> UpdateOrder(OrderModel order);
+        Task<bool> DeleteOrder(OrderModel order);
+        Task<OrderModel> GetOrderByOrderId(string id);
+        Task<List<OrderModel>> GetOrdersList();
+        List<CustomerModel> GetAllCustomer();
     }
 }

@@ -29,9 +29,9 @@ namespace bricksnetcoreapi.Controllers
 
         [HttpGet]
         [Route("getallcustomer")]
-        public List<Customer> GetAllCustomer()
+        public List<CustomerModel> GetAllCustomer()
         {
-            List<Customer> customers = new List<Customer>();
+            List<CustomerModel> customers = new List<CustomerModel>();
             customers = _orderRepository.GetAllCustomer();
             return customers;
             

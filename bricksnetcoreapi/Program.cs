@@ -15,6 +15,7 @@ builder.Services.AddScoped<IProductionRepository,ProductionRepository>();
 builder.Services.AddScoped<IWorkerRepository,WorkerRepository>();
 builder.Services.AddScoped<ISalesRepository, SalesRepository>();
 builder.Services.AddScoped<IMaterialRepository, MaterialRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
 

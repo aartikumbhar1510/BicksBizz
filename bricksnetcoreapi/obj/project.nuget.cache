@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "at2mA4GVMuH4wJlGM34IVwOELkKrhimKXWElTsgZ0kakZWXLTuomGybSNPegsuMbNd4gqo7SZ5AjW6AAQi2S8w==",
+  "dgSpecHash": "zKtwfflvQT95wXBv15vnaYq6c3yvz51MH/qWJOuRx1Kp9vblPTPgGdVkx2gV2cSiR8kQbPwn8fgtj2712cKoHg==",
   "success": true,
   "projectFilePath": "C:\\Users\\91808\\Source\\Repos\\BricksBuzz\\bricksnetcoreapi\\bricksnetcoreapi.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\91808\\.nuget\\packages\\enums.net\\4.0.0\\enums.net.4.0.0.nupkg.sha512",
     "C:\\Users\\91808\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\91808\\.nuget\\packages\\mathnet.numerics.signed\\4.15.0\\mathnet.numerics.signed.4.15.0.nupkg.sha512",
+    "C:\\Users\\91808\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
     "C:\\Users\\91808\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\91808\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\91808\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",

@@ -19,15 +19,22 @@ namespace bricksnetcoreapi.Controllers
         [Route("getuser")]
         public IActionResult GetUsers()
         {
-            return Ok();
+            var result = _repository.GetUsers();
+            return Ok(result);
         }
 
         [HttpPost]
         [Route("validateuser")]
         public IActionResult Login(UserModel user)
         {
+            IActionResult response = Unauthorized();
             var result = _repository.ValidateUser(user);
-            return Ok(result);
+            if (result!=null)
+            {
+              var jwtToken=  _repository.GenerateJwtToken(user);
+                response = Ok(new { token = jwtToken});
+            }
+            return response;
         }
 
         [HttpPost]

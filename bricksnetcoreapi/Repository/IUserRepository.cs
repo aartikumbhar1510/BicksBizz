@@ -1,14 +1,16 @@
 ﻿using bricksnetcoreapi.Models;
+using bricksnetcoreapi.Models.dtos;
 
 namespace bricksnetcoreapi.Repository
 {
     public interface IUserRepository
     {
-        List<UserModel> GetUsers();
+        List<UserDTO> GetUsers();
         bool AddUser(UserModel user);
         bool UpdateUser(UserModel user);
         UserModel GetUserById(int id);
         bool DeleteUser(int id);
-        bool ValidateUser (UserModel user);
+        UserDTO ValidateUser (UserModel user);
+        string GenerateJwtToken(UserModel user);
     }
 }

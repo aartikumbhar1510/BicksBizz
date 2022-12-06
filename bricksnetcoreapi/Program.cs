@@ -1,3 +1,4 @@
+using bricksnetcoreapi.Common;
 using bricksnetcoreapi.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +23,8 @@ builder.Services.AddScoped<IRedisCacheRepository, RedisCacheRepository>();
 
 var app = builder.Build();
 
-
+var logger = app.Services.GetRequiredService<ILogger>();
+app.ConfigureExceptionHandler();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

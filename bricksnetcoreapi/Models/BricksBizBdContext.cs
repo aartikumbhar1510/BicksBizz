@@ -19,11 +19,14 @@ public partial class BricksBizBdContext : DbContext
 
     public virtual DbSet<TblCustomerArchive> CustomerArchives { get; set; }
 
+    public virtual DbSet<TblException> Exceptions { get; set; }
+
     public virtual DbSet<TblOrder> Orders { get; set; }
 
     public virtual DbSet<TblUser> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=BricksBizBD;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -75,6 +78,24 @@ public partial class BricksBizBdContext : DbContext
                 .HasColumnName("customer_old_name");
         });
 
+        modelBuilder.Entity<TblException>(entity =>
+        {
+            entity.HasKey(e => e.ExceptionId);
+
+            entity.ToTable("tbl_exception");
+
+            entity.Property(e => e.ExceptionId).HasColumnName("exception_id");
+            entity.Property(e => e.ExceptionDetails)
+                .HasMaxLength(500)
+                .HasColumnName("exception_details");
+            entity.Property(e => e.ExceptionType)
+                .HasMaxLength(50)
+                .HasColumnName("exception_type");
+            entity.Property(e => e.MethodName)
+                .HasMaxLength(50)
+                .HasColumnName("method_name");
+        });
+
         modelBuilder.Entity<TblOrder>(entity =>
         {
             entity.HasKey(e => e.OrderId);
@@ -100,9 +121,7 @@ public partial class BricksBizBdContext : DbContext
 
             entity.ToTable("tbl_user");
 
-            entity.Property(e => e.Userid)
-                .ValueGeneratedNever()
-                .HasColumnName("userid");
+            entity.Property(e => e.Userid).HasColumnName("userid");
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
                 .HasColumnName("email");

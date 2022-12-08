@@ -9,16 +9,15 @@ namespace bricksnetcoreapi.Repository
 {
     public class UserRepository : IUserRepository
     {
-        public BricksBizBdContext _bricksBizBdContext;
+        private  BricksBizBdContext _bricksBizBdContext;
         private IConfiguration _configuration;
 
-        public UserRepository(BricksBizBdContext bricksBizBdContext, IConfiguration configuration)
+        public UserRepository() 
         {
-            _bricksBizBdContext = bricksBizBdContext;
-            _configuration = configuration;
+            
         }
     
-        public bool AddUser(UserModel user)
+        public bool AddUser(UserDTO user)
         {
             throw new NotImplementedException();
         }
@@ -28,12 +27,12 @@ namespace bricksnetcoreapi.Repository
             throw new NotImplementedException();
         }
 
-        public string GenerateJwtToken(UserModel user)
+        public string GenerateJwtToken(UserDTO user)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("lahukvishwanathumbhar"));
             var credentials = new SigningCredentials(securityKey,SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(_configuration["Jwt:Issuer"], _configuration["Jwt:Issuer"],
+            var token = new JwtSecurityToken("ABCDEFghijkLMNopqRStuVwZYX", "ABCDEFghijkLMNopqRStuVwZYX",
                 null,expires:DateTime.Now.AddMinutes(120),
                 signingCredentials:credentials);
 
@@ -53,7 +52,8 @@ namespace bricksnetcoreapi.Repository
                     Email = result.Email,
                     Username = result.Username,
                     Userid = result.Userid,
-                    Password = result.Password
+                    Password = result.Password,
+                    Status = result.Status
                 };
 
                 return user;
@@ -73,21 +73,22 @@ namespace bricksnetcoreapi.Repository
                 dTO.Email = user.Email;
                 dTO.Username=user.Username;
                 dTO.Password = user.Password;
+                dTO.Status = user.Status;
                 userDTOs.Add(dTO);
 
             }
             return userDTOs;
         }
 
-        public bool UpdateUser(UserModel user)
+        public bool UpdateUser(UserDTO user)
         {
             throw new NotImplementedException();
         }
 
-        public UserDTO ValidateUser(UserModel user)
+        public UserDTO ValidateUser(UserDTO user)
         {
             _bricksBizBdContext = new BricksBizBdContext();
-            var result = _bricksBizBdContext.Users.Where(x=>x.Email == user.UserDTO.Email && x.Password == user.UserDTO.Password).FirstOrDefault();
+            var result = _bricksBizBdContext.Users.Where(x=>x.Email == user.Email && x.Password == user.Password).FirstOrDefault();
             if (result != null)
             {
                 UserDTO loggedInUser = new UserDTO();

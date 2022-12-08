@@ -6,11 +6,11 @@ namespace bricksnetcoreapi.Repository
     public interface IUserRepository
     {
         List<UserDTO> GetUsers();
-        bool AddUser(UserModel user);
-        bool UpdateUser(UserModel user);
+        bool AddUser(UserDTO user);
+        bool UpdateUser(UserDTO user);
         UserDTO GetUser(string email);
         bool DeleteUser(string email);
-        UserDTO ValidateUser (UserModel user);
-        string GenerateJwtToken(UserModel user);
+        UserDTO ValidateUser (UserDTO user);
+        string GenerateJwtToken(UserDTO user);
     }
 }

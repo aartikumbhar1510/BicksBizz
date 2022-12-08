@@ -1,4 +1,5 @@
 ﻿using bricksnetcoreapi.Models;
+using bricksnetcoreapi.Models.dtos;
 using bricksnetcoreapi.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +26,7 @@ namespace bricksnetcoreapi.Controllers
 
         [HttpPost]
         [Route("validateuser")]
-        public IActionResult Login(UserModel user)
+        public IActionResult Login(UserDTO user)
         {
             IActionResult response = Unauthorized();
             var result = _repository.ValidateUser(user);
@@ -39,7 +40,7 @@ namespace bricksnetcoreapi.Controllers
 
         [HttpPost]
         [Route("register")]
-        public IActionResult CreateUser(UserModel user)
+        public IActionResult CreateUser(UserDTO user)
         {
             return Ok();
         }

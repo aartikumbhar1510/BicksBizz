@@ -28,13 +28,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 // adding repo to interface
-builder.Services.AddScoped<IOrderRepository,OrderRepository>();
-builder.Services.AddScoped<IProductionRepository,ProductionRepository>();
-builder.Services.AddScoped<IWorkerRepository,WorkerRepository>();
-builder.Services.AddScoped<ISalesRepository, SalesRepository>();
-builder.Services.AddScoped<IMaterialRepository, MaterialRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IRedisCacheRepository, RedisCacheRepository>();
+builder.Services.AddTransient<IOrderRepository,OrderRepository>();
+builder.Services.AddTransient<IProductionRepository,ProductionRepository>();
+builder.Services.AddTransient<IWorkerRepository,WorkerRepository>();
+builder.Services.AddTransient<ISalesRepository, SalesRepository>();
+builder.Services.AddTransient<IMaterialRepository, MaterialRepository>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IRedisCacheRepository, RedisCacheRepository>();
 
 
 var app = builder.Build();

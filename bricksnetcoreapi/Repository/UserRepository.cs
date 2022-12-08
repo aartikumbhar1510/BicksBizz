@@ -11,12 +11,19 @@ namespace bricksnetcoreapi.Repository
     {
         public BricksBizBdContext _bricksBizBdContext;
         private IConfiguration _configuration;
+
+        public UserRepository(BricksBizBdContext bricksBizBdContext, IConfiguration configuration)
+        {
+            _bricksBizBdContext = bricksBizBdContext;
+            _configuration = configuration;
+        }
+    
         public bool AddUser(UserModel user)
         {
             throw new NotImplementedException();
         }
 
-        public bool DeleteUser(int id)
+        public bool DeleteUser(string email)
         {
             throw new NotImplementedException();
         }
@@ -33,9 +40,26 @@ namespace bricksnetcoreapi.Repository
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public UserModel GetUserById(int id)
+        public UserDTO GetUser(string email)
         {
-            throw new NotImplementedException();
+            _bricksBizBdContext = new BricksBizBdContext();
+            
+            var result = _bricksBizBdContext.Users.Where(x => x.Email == email).FirstOrDefault();
+
+            if (result != null)
+            {
+                UserDTO user = new UserDTO()
+                {
+                    Email = result.Email,
+                    Username = result.Username,
+                    Userid = result.Userid,
+                    Password = result.Password
+                };
+
+                return user;
+            }
+            return new UserDTO();
+            
         }
 
         public List<UserDTO> GetUsers()

@@ -8,8 +8,8 @@ namespace bricksnetcoreapi.Repository
         List<UserDTO> GetUsers();
         bool AddUser(UserModel user);
         bool UpdateUser(UserModel user);
-        UserModel GetUserById(int id);
-        bool DeleteUser(int id);
+        UserDTO GetUser(string email);
+        bool DeleteUser(string email);
         UserDTO ValidateUser (UserModel user);
         string GenerateJwtToken(UserModel user);
     }

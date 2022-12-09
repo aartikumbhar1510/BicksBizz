@@ -49,6 +49,9 @@ namespace bricksnetcoreapi.Controllers
         [Route("deleteuser")]
         public IActionResult DeleteUser()
         { 
+
+
+
             UserDTO user = new UserDTO();
             user.Status = "InActive";
             var result = _repository.DeleteUser(user);

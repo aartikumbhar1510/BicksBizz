@@ -22,9 +22,20 @@ namespace bricksnetcoreapi.Repository
             throw new NotImplementedException();
         }
 
-        public bool DeleteUser(string email)
+        public bool DeleteUser(UserDTO user)
         {
-            throw new NotImplementedException();
+            _bricksBizBdContext = new BricksBizBdContext();
+
+            var result = _bricksBizBdContext.Users.Where(x => x.Email == user.Email).FirstOrDefault();
+            if (result != null)
+            {
+                result.Status = user.Status;
+                _bricksBizBdContext.SaveChanges();
+                return true;
+
+            }
+                return false;
+
         }
 
         public string GenerateJwtToken(UserDTO user)

@@ -9,7 +9,7 @@ namespace bricksnetcoreapi.Repository
         bool AddUser(UserDTO user);
         bool UpdateUser(UserDTO user);
         UserDTO GetUser(string email);
-        bool DeleteUser(string email);
+        bool DeleteUser(UserDTO user);
         UserDTO ValidateUser (UserDTO user);
         string GenerateJwtToken(UserDTO user);
     }
